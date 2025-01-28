@@ -8,7 +8,7 @@ class Program
         // Initialize a List to store student names
         List<string> studentNames = new List<string>
         {
-            "Alice", "Bob", "Charlie", "David", "Eva"
+            "Rajvi", "Prachi", "Khushi", "Deep", "Shubh"
         };
 
         // Print all student names
