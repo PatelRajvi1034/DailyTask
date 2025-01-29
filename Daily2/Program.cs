@@ -17,5 +17,9 @@ class Program
         {
             Console.WriteLine(student);
         }
+
+        // Prevent the console from closing immediately
+        Console.WriteLine("\nPress Enter to exit.");
+        Console.ReadLine(); // Wait for user input before closing
     }
 }

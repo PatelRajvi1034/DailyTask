@@ -9,5 +9,7 @@ internal class Program
         int number2 = int.Parse(Console.ReadLine());
         int number3 = int.Parse(Console.ReadLine());
         Console.WriteLine("You entered: " + number2);
+        Console.ReadLine(); // Wait for user input before closing
+
     }
 }
