@@ -7,16 +7,19 @@ namespace DelegateExample
 
     class Program
     {
+        // Method to add two numbers
         static int Add(int num1, int num2)
         {
             return num1 + num2;
         }
 
+        // Method to subtract two numbers
         static int Subtract(int num1, int num2)
         {
             return num1 - num2;
         }
 
+        // Method to multiply two numbers
         static int Multiply(int num1, int num2)
         {
             return num1 * num2;
@@ -24,7 +27,7 @@ namespace DelegateExample
 
         static void Main(string[] args)
         {
-           
+            // Create a delegate instance
             OperationDelegate operationDelegate;
 
             Console.WriteLine("Select an operation:");
@@ -32,6 +35,7 @@ namespace DelegateExample
             Console.WriteLine("2. Subtract");
             Console.WriteLine("3. Multiply");
 
+            // Get user's choice
             int choice = int.Parse(Console.ReadLine());
 
             Console.WriteLine("Enter the first number:");
@@ -40,7 +44,7 @@ namespace DelegateExample
             Console.WriteLine("Enter the second number:");
             int num2 = int.Parse(Console.ReadLine());
 
-         
+            // Based on user choice, assign the appropriate method to the delegate
             switch (choice)
             {
                 case 1:
@@ -56,6 +60,8 @@ namespace DelegateExample
                     Console.WriteLine("Invalid choice");
                     return;
             }
+
+            // Invoke the delegate to perform the operation
             int result = operationDelegate(num1, num2);
 
             // Output the result
