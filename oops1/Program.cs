@@ -21,7 +21,7 @@ public class Room
         return IsAvailable;
     }
 
-    public void SetAvailability(bool availability)
+       public void SetAvailability(bool availability)
     {
         IsAvailable = availability;
     }
