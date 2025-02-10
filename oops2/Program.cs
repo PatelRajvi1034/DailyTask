@@ -3,6 +3,8 @@ public class Room
 {
     public string Name { get; set; }
     public string Location { get; set; }
+
+    //Parent Constructor
     public Room(string name, string location)
     {
         Name = name;
@@ -25,11 +27,15 @@ public class StandardRoom : Room
     {
         Amenities = amenities;
     }
+
+    //inheritance
     public override void GetRoomDetails()
     {
         base.GetRoomDetails();
         Console.WriteLine($"Amenities: {Amenities}");
     }
+
+    //polymorphism
     public override decimal CalculateTotalPrice(int nights)
     {
         decimal basePrice = base.CalculateTotalPrice(nights);
@@ -56,6 +62,8 @@ public class SuiteRoom : Room
     }
 }
 
+
+//Abstraction
 public abstract class HotelService
 {
     public abstract string GetServiceType();
