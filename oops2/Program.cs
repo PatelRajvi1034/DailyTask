@@ -1,10 +1,10 @@
 ﻿using System;
-public class Room
+public class Room: HotelService
 {
     public string Name { get; set; }
     public string Location { get; set; }
 
-    //Parent Constructor
+
     public Room(string name, string location)
     {
         Name = name;
@@ -18,33 +18,42 @@ public class Room
     {
         Console.WriteLine($"Room Name: {Name}\nLocation: {Location}");
     }
+
+    public override string GetServiceType()
+    {
+        return "Abstraction performed";
+    }
 }
+
+// Derived class StandardRoom
 public class StandardRoom : Room
 {
     public string Amenities { get; set; }
+
     public StandardRoom(string name, string location, string amenities)
      : base(name, location)
     {
         Amenities = amenities;
     }
 
-    //inheritance
+    // Overriding GetRoomDetails
     public override void GetRoomDetails()
     {
         base.GetRoomDetails();
         Console.WriteLine($"Amenities: {Amenities}");
     }
 
-    //polymorphism
     public override decimal CalculateTotalPrice(int nights)
     {
         decimal basePrice = base.CalculateTotalPrice(nights);
-        return basePrice + 50;
+        return basePrice + 50; 
     }
 }
+
 public class SuiteRoom : Room
 {
     public string LuxuryFeatures { get; set; }
+
     public SuiteRoom(string name, string location, string luxuryFeatures)
      : base(name, location)
     {
@@ -58,58 +67,39 @@ public class SuiteRoom : Room
     public override decimal CalculateTotalPrice(int nights)
     {
         decimal basePrice = base.CalculateTotalPrice(nights);
-        return basePrice + 200;
+        return basePrice + 200; 
     }
 }
 
-
-//Abstraction
+// Abstract class HotelService
 public abstract class HotelService
 {
-    public abstract string GetServiceType();
+    public abstract string GetServiceType(); 
     public void PrintHotelPolicy()
     {
         Console.WriteLine("Hotel policy: No smoking, No pets.");
     }
 }
-public class RoomWithService
-{
-    public Room Room { get; set; }
-    private HotelService _hotelService;
-    public RoomWithService(string name, string location, HotelService hotelService)
-    {
-        Room = new Room(name, location);
-        _hotelService = hotelService;
-    }
-    public void GetRoomDetails()
-    {
-        Room.GetRoomDetails();
-        Console.WriteLine($"Service: {_hotelService.GetServiceType()}");
-    }
-}
-public class DailyCleaningService : HotelService
-{
-    public override string GetServiceType()
-    {
-        return "Room Service: Daily cleaning";
-    }
-}
+
 public interface IHotelOperations
 {
     void BookRoom(int roomNumber);
     void CheckoutRoom(int roomNumber);
     void DisplayAvailableRooms();
 }
+
 public class HotelManager : IHotelOperations
 {
     void IHotelOperations.BookRoom(int roomNumber)
     {
         Console.WriteLine($"Booking room {roomNumber}");
     }
+
     void IHotelOperations.CheckoutRoom(int roomNumber)
     {
         Console.WriteLine($"Checkout room {roomNumber}");
     }
+
     void IHotelOperations.DisplayAvailableRooms()
     {
         Console.WriteLine("Displaying available rooms...");
@@ -122,12 +112,14 @@ public sealed class BookingManager
         Console.WriteLine($"Processing booking for room {roomNumber} under customer {customerName}");
     }
 }
+
 public partial class HotelOperations
 {
     public void BookRoom(int roomNumber)
     {
         Console.WriteLine($"Room {roomNumber} has been booked.");
     }
+
     public void CheckoutRoom(int roomNumber)
     {
         Console.WriteLine($"Room {roomNumber} has been checked out.");
@@ -139,11 +131,13 @@ public partial class HotelOperations
     {
         Console.WriteLine("Updating room availability...");
     }
+
     public void DisplayAvailableRooms()
     {
         Console.WriteLine("Displaying all available rooms...");
     }
 }
+
 class Program
 {
     static void Main()
@@ -157,13 +151,10 @@ class Program
         suiteRoom.GetRoomDetails();
         Console.WriteLine($"Total Price for 3 nights: {suiteRoom.CalculateTotalPrice(3)}\n");
 
-        HotelService dailyCleaning = new DailyCleaningService();
-        RoomWithService roomWithService = new RoomWithService("Deluxe Room", "2nd Floor", dailyCleaning);
-        roomWithService.GetRoomDetails();
-
-        HotelService hotelService = new DailyCleaningService();
-        Console.WriteLine(hotelService.GetServiceType());
-        hotelService.PrintHotelPolicy();
+        IHotelOperations hotelManager = new HotelManager();
+        hotelManager.BookRoom(101);
+        hotelManager.CheckoutRoom(101);
+        hotelManager.DisplayAvailableRooms();
 
         BookingManager bookingManager = new BookingManager();
         bookingManager.ProcessBooking(101, "Alice");
