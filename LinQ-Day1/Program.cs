@@ -142,6 +142,8 @@ static void Main(string[] args)
         var mostCommonDisease = patients.GroupBy(p => p.Disease).OrderByDescending(g => g.Count()).FirstOrDefault()?.Key;
         Console.WriteLine($"\nMost common disease: {mostCommonDisease}");
 
+
+
         var mostCommonDiseaseQuery = (from p in patients
                                       group p by p.Disease into diseaseGroup
                                       orderby diseaseGroup.Count() descending

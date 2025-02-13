@@ -23,6 +23,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "oops3", "oop3\oops3.csproj"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LinQ-Day1", "LinQ-Day1\LinQ-Day1.csproj", "{C61EA3CD-FD34-4303-9A5F-2CF1C0B36F06}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LinQ-Day2", "LinQ-Day2\LinQ-Day2.csproj", "{8BF92BB8-3DAB-4811-A4F8-B9329221AA26}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LinQ-Day2.1", "LinQ-Day2.1\LinQ-Day2.1.csproj", "{687864B5-24DC-48FB-83A2-6D546BC5D071}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -65,6 +69,14 @@ Global
 		{C61EA3CD-FD34-4303-9A5F-2CF1C0B36F06}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C61EA3CD-FD34-4303-9A5F-2CF1C0B36F06}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C61EA3CD-FD34-4303-9A5F-2CF1C0B36F06}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8BF92BB8-3DAB-4811-A4F8-B9329221AA26}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8BF92BB8-3DAB-4811-A4F8-B9329221AA26}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8BF92BB8-3DAB-4811-A4F8-B9329221AA26}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8BF92BB8-3DAB-4811-A4F8-B9329221AA26}.Release|Any CPU.Build.0 = Release|Any CPU
+		{687864B5-24DC-48FB-83A2-6D546BC5D071}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{687864B5-24DC-48FB-83A2-6D546BC5D071}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{687864B5-24DC-48FB-83A2-6D546BC5D071}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{687864B5-24DC-48FB-83A2-6D546BC5D071}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
