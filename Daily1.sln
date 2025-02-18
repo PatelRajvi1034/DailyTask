@@ -27,6 +27,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LinQ-Day2", "LinQ-Day2\LinQ
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LinQ-Day2.1", "LinQ-Day2.1\LinQ-Day2.1.csproj", "{687864B5-24DC-48FB-83A2-6D546BC5D071}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NET.CORE-Day1", "NET.CORE-Day1\NET.CORE-Day1.csproj", "{119A53C8-F3C2-4295-933D-B0D5DFB5FB40}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -77,6 +79,10 @@ Global
 		{687864B5-24DC-48FB-83A2-6D546BC5D071}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{687864B5-24DC-48FB-83A2-6D546BC5D071}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{687864B5-24DC-48FB-83A2-6D546BC5D071}.Release|Any CPU.Build.0 = Release|Any CPU
+		{119A53C8-F3C2-4295-933D-B0D5DFB5FB40}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{119A53C8-F3C2-4295-933D-B0D5DFB5FB40}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{119A53C8-F3C2-4295-933D-B0D5DFB5FB40}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{119A53C8-F3C2-4295-933D-B0D5DFB5FB40}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

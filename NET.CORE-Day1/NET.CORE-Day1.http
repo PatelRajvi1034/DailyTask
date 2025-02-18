@@ -1,0 +1,6 @@
+@NET.CORE_Day1_HostAddress = http://localhost:5094
+
+GET {{NET.CORE_Day1_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
