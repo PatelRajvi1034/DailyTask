@@ -1,4 +1,6 @@
-﻿public class Patient
+﻿using System.Text.RegularExpressions;
+
+public class Patient
 {
     public int PatientId { get; set; }
     public string Name { get; set; }
@@ -347,6 +349,15 @@ public class Hospital
                 .Where(g => g.Count() > 2)
                 .Select(g => new { g.Key.PatientId, g.Key.HospitalId, VisitCount = g.Count() })
                 .ToList();
+        var frequentvisitorsquerysyntax = (from record in medicalRecords
+                                          group record by new { record.PatientId, record.HospitalId } into groupedtable
+                                          where groupedtable.Count() > 2
+                                          select new
+                                          {
+                                              PatientId = groupedtable.Key.PatientId,
+                                              HospitalId = groupedtable.Key.HospitalId,
+                                              VisitCount = groupedtable.Count()
+                                          }).ToList();
 
         Console.WriteLine("Patients who visited a hospital more than twice:");
         foreach (var record in frequentVisitors)
@@ -406,20 +417,23 @@ public class Hospital
 
         Console.WriteLine("Patient Names (Deferred Execution):");
             foreach (var name in deferredQuery2) 
-                {
+                { 
                      Console.WriteLine(name);
                 }
 
         Console.WriteLine("\n**************************************************************************");
 
+        var patientsLookup = patients.ToLookup(p => p.PatientId, p => p.Name);
+        patients.Add(new Patient(7, "Neha Sharma", 26));
 
-        var immediateQuery = patients.Select(p => p.Name).ToList(); 
-        patients.Add(new Patient(7, "Neha Sharma", 26)); 
-        Console.WriteLine("Patient Names (Immediate Execution):");
-            foreach (var name in immediateQuery) 
+        Console.WriteLine("Patient Names (Using Lookup):");
+        foreach (var nameGroup in patientsLookup)
+            {
+             foreach (var name in nameGroup)
                 {
-                    Console.WriteLine(name);
+                  Console.WriteLine(name);
                 }
+            }
 
         Console.WriteLine("\n**************************************************************************");
         Console.WriteLine("\n13Query");
